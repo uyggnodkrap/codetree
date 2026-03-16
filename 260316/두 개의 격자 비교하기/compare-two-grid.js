@@ -10,5 +10,6 @@ const arr2 = input.slice(n+1).map(i => i.split(' ').map(Number))
 // const answer = Array.from({length: n}, () => new Array(m).fill(0))
 
 for (let i = 0; i < n; i++) {
-    console.log(arr1[i].map((v, j) => v !== arr2[i][j] ? 1 : 0).join(' '))
+    // console.log(arr1[i].map((v, j) => v !== arr2[i][j] ? 1 : 0).join(' '))
+      console.log(arr1[i].map((v,j)=>+(v!==arr2[i][j])).join(' '))
 }
