@@ -41,8 +41,10 @@ if (m2 == m1) answer = d2 - d1 + 1
 else {
     if (d1 > d2) {
         answer  = getMonth(m2) - getMonth(m1) + d1 - d2
+    } else if (d1 == d2){
+        answer  = getMonth(m2) - getMonth(m1) - d1 + d2 + 1
     } else {
-        answer  = getMonth(m2) - getMonth(m1) - d1 + d2
+        answer  = getMonth(m2) - getMonth(m1) - d1 + d2 
     }
         
 
