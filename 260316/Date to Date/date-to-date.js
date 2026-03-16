@@ -36,17 +36,4 @@ const getMonth = (x) => {
     if (x === 12) return month12
 }
 
-let answer = 0
-if (m2 == m1) answer = d2 - d1 + 1
-else {
-    if (d1 > d2) {
-        answer  = getMonth(m2) - getMonth(m1) + d1 - d2
-    } else if (d1 == d2){
-        answer  = getMonth(m2) - getMonth(m1) - d1 + d2 + 1
-    } else {
-        answer  = getMonth(m2) - getMonth(m1) - d1 + d2 
-    }
-        
-
-}
-console.log(answer)
+console.log(getMonth(m2) + d2 - (getMonth(m1) + d1))
