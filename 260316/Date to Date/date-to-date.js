@@ -9,7 +9,7 @@ const [m1, d1, m2, d2] = input[0].split(' ').map(Number);
 
 const getMonth = (x) => {
 
-    const month1 = 31
+    const month1 = 31 
     const month2 = 28 + month1
     const month3 = 31 + month2
     const month4 = 30 + month3
@@ -36,5 +36,15 @@ const getMonth = (x) => {
     if (x === 12) return month12
 }
 
+let answer = 0
+if (m2 == m1) answer = d2 - d1 + 1
+else {
+    if (d1 > d2) {
+        answer  = getMonth(m2) - getMonth(m1) + d1 - d2
+    } else {
+        answer  = getMonth(m2) - getMonth(m1) - d1 + d2
+    }
+        
 
-console.log(getMonth(m2) - getMonth(m1) + (d2 - d1))
+}
+console.log(answer)
