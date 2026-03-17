@@ -17,7 +17,7 @@ const idx = getDate(m1, d1) % 7
 
 const stt_date = getDate(m1, d1) + 7 - idx
 const end_date = getDate(m2, d2) + 7 - idx
-const find_day = (day.indexOf(A) + 7 - idx) % 7
+const find_day = day.indexOf(A) 
 
 let answer = 0
 for (let i = stt_date; i <= end_date; i++) {
