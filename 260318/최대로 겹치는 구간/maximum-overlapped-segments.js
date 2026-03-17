@@ -8,7 +8,7 @@ let answer = Array(200 + 1).fill(0)
 
 for (let i = 0; i < n; i++ ){
     let [stt, end] = [segments[i][0], segments[i][1]]
-    for (let j = stt; j <= end; j++) {
+    for (let j = stt; j < end; j++) {
         answer[j+100] += 1
     }
 }
