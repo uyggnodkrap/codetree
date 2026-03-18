@@ -11,13 +11,7 @@ const sortDescFunc = (a, b) => {
     const [ax, ay, az] = a.slice(1, 4).map(Number)
     const [bx, by, bz] = b.slice(1, 4).map(Number)
 
-    if (ax === bx) {
-        if (ay === by) {
-            return bz - az
-        }
-        return by - ay
-    }
-    return bx - ax
+    return bx - ax || by - ay || bz - az
 }
 
 studentsInput.sort((x, y) => sortDescFunc(x, y))
