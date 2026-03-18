@@ -1,13 +1,8 @@
 const fs = require("fs");
-const input = fs.readFileSync(0).toString().trim().split('\n');
+const [n, m] = fs.readFileSync(0).toString().trim().split(' ').map(Number);
 
-let [n, m] = input[0].split(' ').map(Number);
+const gcd = (a,b) => b === 0 ? a : gcd(b, a % b)
 
-// Please Write your code here.
+const lcm = (a,b) => (a * b) / gcd(a, b)
 
-
-const gcd = (a, b) => b === 0 ? a : gcd(b, a % b)
-
-const lcm = (a, b) => (a * b)/ gcm(a, b)
-
-console.log(lcm(n, m))
+console.log(lcm(n, m)) 
