@@ -4,11 +4,9 @@ const n = Number(input[0]);
 const arr = input[1].split(" ").map(Number);
 
 // Please Write your code here.
-let answer = []
-answer.push(arr[0])
-answer.push(Math.max(answer[0], arr[1]))
-for (let i = 2; i < n; i++) {
-    answer.push(Math.max(answer[i-1], arr[i]))
+const recursive = (x) => {
+    if (x === 0) return arr[0]
+    return Math.max(recursive(x-1), arr[x])
 }
 
-console.log(answer[n-1])
+console.log(recursive(n-1))
