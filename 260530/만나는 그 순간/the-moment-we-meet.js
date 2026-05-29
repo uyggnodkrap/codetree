@@ -15,25 +15,23 @@ for (let i = 0; i < m; i++) {
 }
 
 // Please Write your code here.
-const arrA = []
-const arrB = []
 
-let idxA = 0
-let idxB = 0
+const move = (arr) => {
+    const p = []
+    let idx = 0
 
-for (let i = 0; i < n; i++) {
-    const [d, t] = movesA[i]
-    for (let j = 0; j < t; j++) {
-        d === 'R' ? arrA.push(++idxA) : arrA.push(--idxA) 
-    }
+    arr.map(v => {
+        const [d, t] = v
+        for (let j = 0; j < t; j++) {
+            d === 'R' ? p.push(++idx) : p.push(--idx) 
+        }
+    })
+    return p
 }
 
-for (let i = 0; i < m; i++) {
-    const [d, t] = movesB[i]
-    for (let j = 0; j < t; j++) {
-        d === 'R' ? arrB.push(++idxB) : arrB.push(--idxB) 
-    }
-}
+
+const arrA = move(movesA)
+const arrB = move(movesB)
 
 const t = arrA.length
 let answer = -1
